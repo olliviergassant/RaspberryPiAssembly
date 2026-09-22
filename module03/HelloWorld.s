@@ -1,6 +1,7 @@
 
 .text
-/* text portion is the asembler directive. It tells the ARM assembler to start the process after the directive. */
+/* text portion is the asembler directive. 
+It tells the ARM assembler to start the process after the directive. */
 
 .global main
 main:
