@@ -35,6 +35,6 @@ main:
 
 .data
   prompt1: .asciz "enter your number -> " //scan for user data
-  output1: .asciz "is this your number? \t%s\t i think it is!" //formatting for string
+  output1: .asciz "is this your number? \t%s\t i think it is\n!" //formatting for string
   format1: .asciz "%s"
   number1: .space 40
