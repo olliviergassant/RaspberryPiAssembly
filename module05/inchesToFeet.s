@@ -22,10 +22,10 @@ main:
   LDR r0, =format //load forht format for the data
   LDR r0, =inches //load into r0 the inches 
   BL scanf //branch and link to scan user input
-  STR r0, r12 //store the user input from register to memory
+  STR r0, [r12] //store the user input from register to memory
 
   # Concept 3: Converting inchest to feet
-  LDR r0, r12
+  LDR r0, [r12]
   LDR r0, [r0]
   MOV r1, #12
   BL __aeabi_idiv //branch and link division 
