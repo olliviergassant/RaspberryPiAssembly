@@ -25,12 +25,13 @@ main:
 
   #Concept 3: converting celsius to fahrenheit using other registers multiplication
   LDR r1, =userinput
-  MOV r1, [r1] //move into r2 the value stored in r1
-  MUL r1, r1, #9 //store into r1 the vlaue in r1 multiplied by the immediate #9
+  LDR r1, [r1] //move into r2 the value stored in r1
+  MOV r2, #9 //store the immediate value of 9 into r2
+  MUL r1, r1, r2  //store into r1 the vlaue in r1 multiplied by the immediate #9
 
   #Concept 4: division
   MOV r0, r1 //move the value stored in r1 into r0
-  LDR r1, #5 //give r1 the immediate value of 5
+  MOV r1, #5 //give r1 the immediate value of 5
   BL __aeabi_idiv //branch and link to the division poeration that will be stored into r0
 
   #Concpet 4: Adding 32 back to the quotient
@@ -49,6 +50,6 @@ main:
 
 .data
   prompt: .asciz "What is your temprature in Celsius: "
-  output: .asciz "Temprature coverted to Fahrenheit: %d"
+  output: .asciz "Temprature coverted to Fahrenheit: %d\n"
   format: .asciz "%d"
   userinput: .word 0

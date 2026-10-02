@@ -37,7 +37,7 @@ main:
   BL __aeabi_idiv //branch and link to the division poeration that will be stored into r0
 
  # Concept 6: printing final value
-  LDR r1, r0 //load value of r0 into r1
+  MOV r1, r0 //load value of r0 into r1
   LDR r0, =output //load output to r0
   BL printf //branch and link to printf function
 
@@ -48,6 +48,6 @@ main:
 
 .data
   prompt: .asciz "What is your temprature in Fahrenheit: "
-  output: .asciz "Temprature coverted to celsius: %d"
+  output: .asciz "Temprature coverted to celsius: %d\n"
   format: .asciz "%d"
   userinput: .word 0

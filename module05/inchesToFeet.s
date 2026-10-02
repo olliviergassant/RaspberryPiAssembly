@@ -20,19 +20,19 @@ main:
 
   # Concept 2: getting user input
   LDR r0, =format //load forht format for the data
-  LDR r0, =inches //load into r0 the inches 
+  LDR r1, =inches //load into r0 the inches 
   BL scanf //branch and link to scan user input
-  STR r0, [r12] //store the user input from register to memory
 
   # Concept 3: Converting inchest to feet
-  LDR r0, [r12]
+  LDR r0, =inches
   LDR r0, [r0]
   MOV r1, #12
   BL __aeabi_idiv //branch and link division 
 
   # Concept 4: Printing conversion
-  LDR r0, r2 //value of the quotient
-  LDR r1, r12 //the original user input
+  MOV r2, r0 //value of the quotient
+  LDR r1, =inches //the original user input
+  LDR r1, [r1] //value of =inches
   LDR r0, =output
   BL printf
 
