@@ -30,7 +30,6 @@ main:
   MUL r2, r0, r1
 
   # Concept 4: printing conversion
-  LDR r2, [r2]
   LDR r1, =feet
   LDR r1, [r1]
   LDR r0, =output
