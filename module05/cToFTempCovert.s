@@ -19,11 +19,17 @@ main:
   BL printf //branh and link to the print f method
 
   # Concept 2: Taking in the user input and storing it 
-  LDR r1, =userinput //load into register 1
+  LDR r0, =format //load the address into register 0
+  LDR r1, =userinput //load the address register 1
   BL scanf
 
-  #Concept 3: converting celsius to fahrenheit using other registers
-  MOV r2, r1 //move into r2 the value stored in r1
+  #Concept 3: converting celsius to fahrenheit using other registers multiplication
+  LDR r1, =userinput
+  MOV r1, [r1] //move into r2 the value stored in r1
+  MUL r1, r1, #9 //store into r1 the vlaue in r1 multiplied by the immediate #9
+
+  #Concept 4: division
+  
 
   # Return to the OS
   LDR lr, [sp, #0]
