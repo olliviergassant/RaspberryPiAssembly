@@ -29,6 +29,17 @@ main:
   MUL r1, r1, #9 //store into r1 the vlaue in r1 multiplied by the immediate #9
 
   #Concept 4: division
+  MOV r0, r1 //move the value stored in r1 into r0
+  LDR r1, #5 //give r1 the immediate value of 5
+  BL __aeabi_idiv //branch and link to the division poeration that will be stored into r0
+
+  #Concpet 4: Adding 32 back to the quotient
+  ADD r0, #32 // add the immediate value of 32 into the quotient
+  
+  #Concept 5: printing final value
+  MOV r1, r0 // move value of r0 into r1
+  LDR r0, =output //load the output data into r0
+  BL printf
   
 
   # Return to the OS
