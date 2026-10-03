@@ -15,9 +15,9 @@ main:
   STR lr, [sp, #0] 
   
   # Concept 1: using XOR to swap registers
-  EOR R1, R1, R2   ; Step 1: R1 = R1 XOR R2
-  EOR R2, R1, R2   ; Step 2: R2 = R1 XOR R2  //(R2 now holds the original R1)
-  EOR R1, R1, R2   ; Step 3: R1 = R1 XOR R2  //(R1 now holds the original R2)
+  EOR R1, R1, R2   // r1 = r1 XOR r2
+  EOR R2, R1, R2   // r2 = r1 XOR r2 so r2 now holds the original r1)
+  EOR R1, R1, R2   // r1 = r1 XOR r2  so r1 now holds the original r2)
 
   # Return to the OS
   LDR lr, [sp, #0]
