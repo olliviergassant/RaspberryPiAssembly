@@ -1,8 +1,8 @@
 #
-# Prgram Name: template.s
+# Prgram Name: registerSwap.s
 # Author: Ollivier Gassant
-# Date
-# Purpose: Template that can be used to start ARM assembly program using gcc
+# Date: 10/3/2026
+# Purpose: swaps two registers without using a temporary register, using only EOR (XOR) instructions.
 # 
 #
 
