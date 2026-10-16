@@ -21,7 +21,11 @@ I wanted a record of my growth, not just a folder of finished assignments. Each 
 
 | # | Project | Core Concepts | What It Taught Me |
 |---|---------|---------------|-------------------|
-| 1 | [HelloWorld](./module03) | e.g. registers, `mov`, system calls | One-line takeaway |
+| 1 | [helloWorld](./module03) | e.g. registers, `mov`, system calls | Memory management and printf function |
+| 2 | [prompyUserAge](./module04) | e.g. registers, scanf, printf | User input, and data storage |
+| 3 | [quotedStringPrompt](./module04) | e.g. registers, scanf, printf | User input, and string formatiing |
+| 4 | [readFloatingPointValue](./module04) | e.g. memory, floating values | Dealing with floating point values in Assembly |
+| 5 | [stringWithTabCharacters](./module04) | e.g. memory, scanf, formatting | Formatting user input string with quotations |
 
 
 ---
@@ -54,11 +58,11 @@ Each entry follows the same structure: the problem, how I approached it, what br
 
 ## Environment & Tools
 
-- **Hardware:** Raspberry Pi [model]
+- **Hardware:** Raspberry Pi
 - **Architecture:** ARM [32-bit / AArch64]
 - **Assembler / Linker:** GNU `as` and `ld` (or `gcc`)
 - **Debugger:** `gdb`
-- **Editor:** [your editor]
+- **Editor:** VIM
 
 ## Running a Program
 
