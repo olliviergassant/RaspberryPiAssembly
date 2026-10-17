@@ -9,7 +9,7 @@ All of my programs are written using the Vim text editor. My Vim configuration c
 ## Table of Projects
 
 - [Breakdown of the `promptUserAge.s` File](#breakdown-of-the-promptuserages-file)
-- [Breakdown of the `quotedStringPrompt.s` File](#break-down-of-the-quotedstringprompts-file)
+- [Breakdown of the `quotedStringPrompt.s` File](#breakdown-of-the-quotedstringprompts-file)
 
 ---
 
