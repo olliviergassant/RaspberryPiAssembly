@@ -1,4 +1,4 @@
-<!-- Breakdown of the promptUserAge.s file -->
+<!-- Breakdown of the promptUserAge.s and quotedStringPrompt.s files -->
 
 # scanf and printf Projects
 
@@ -96,12 +96,13 @@ Please enter your age -> 25
 <!-- TODO: paste the actual output line here -->
 ```
 
+---
 
 # Breakdown of the `quotedStringPrompt.s` File
 
 ## Assignment Prompt
 
-
+<!-- TODO: add the assignment prompt here -->
 
 ## Writing the Program
 
@@ -118,7 +119,7 @@ In my code, I separate the different concepts, or functions, of the program into
 ### Concept 1: Printing the Prompt to the Screen
 
 **Line 18:** `LDR r0, =prompt1`
-Loads the memory address of the `prompt1` string into register 0 so that `printf` knows where to find it. The `=` tells the assembler to use the label's address. `prompt1` is an `.asciz` string: `"Please enter your age -> "`.
+Loads the memory address of the `prompt1` string into register 0 so that `printf` knows where to find it. The `=` tells the assembler to use the label's address. `prompt1` is an `.asciz` string that prints `"What is the string you want shown? "`.
 
 **Line 19:** `BL printf`
 Branches and links to `printf`, a function defined outside of this file in the C library. `BL` stores the return address in the link register (`LR`), overwriting whatever was there before.
@@ -126,10 +127,10 @@ Branches and links to `printf`, a function defined outside of this file in the C
 ### Concept 2: Scanning the User Input
 
 **Line 22:** `LDR r0, =format1`
-Loads the memory address of the `format1` string into register 0 so that `scanf` knows where to find it. `format1` is an `.asciz` string: `"%s"`, which tells `scanf` what type of data to read from the user.
+Loads the memory address of the `format1` string into register 0 so that `scanf` knows where to find it. `format1` is an `.asciz` string: `"%39[^\n]"`, which tells `scanf` to read up to 39 characters, stopping early if it reaches a newline. Unlike `%s`, this keeps spaces, so a whole line of text can be read.
 
-**Line 23:** `LDR r1, =age1`
-Loads the memory address of `age1` into register 1 so that `scanf` knows where to store the input. `age1` is created with the `.space` directive, which reserves a specified number of uninitialized bytes in memory.
+**Line 23:** `LDR r1, =string1`
+Loads the memory address of `string1` into register 1 so that `scanf` knows where to store the input. `string1` is created with the `.space` directive, which reserves a specified number of uninitialized bytes in memory. It needs at least 40 bytes: 39 for the characters plus 1 for the null terminator that `scanf` adds.
 
 **Line 24:** `BL scanf`
 Branches and links to `scanf`, a function defined outside of this file in the C library. `BL` stores the return address in `LR`, overwriting whatever was there before.
@@ -139,8 +140,8 @@ Branches and links to `scanf`, a function defined outside of this file in the C 
 **Line 27:** `LDR r0, =output1`
 Loads the memory address of the `output1` string into register 0 so that `printf` knows where to find it. The `output1` string contains the `%s` format specifier, which tells `printf` where to place the user's input.
 
-**Line 28:** `LDR r1, =age1`
-Loads the memory address of the user's input (previously stored in `age1`) into register 1.
+**Line 28:** `LDR r1, =string1`
+Loads the memory address of the user's input (previously stored in `string1`) into register 1.
 
 **Line 29:** `BL printf`
 Branches and links to `printf`, a function defined outside of this file in the C library. `BL` stores the return address in `LR`, overwriting whatever was there before.
@@ -176,6 +177,7 @@ From the same folder, run the program with `./<programName>`:
 Expected output:
 
 ```
-
+"What is the string you want shown? "
+Test :)
+"This is your output 'Test :)'"
 ```
-
