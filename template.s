@@ -3,11 +3,12 @@
 # Author: Ollivier Gassant
 # Date
 # Purpose: Template that can be used to start ARM assembly program using gcc
-# 
 #
 
-.text
+# Define the global function
 .global main
+
+.text
 
 main:
   # Save return to OS on stack
@@ -22,3 +23,5 @@ main:
   MOV pc, lr
 
 .data
+
+#END of main
